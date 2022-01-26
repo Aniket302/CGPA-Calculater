@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<style>
+
+.btn-group .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-size:25px;
+}
+
+.btn-group .button:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<script type = "text/javascript">
+    function calculate1()
+    {
+        var a = document.getElementById("tot_credits").value;
+        var b = document.getElementById("CGPA").value;
+        var c = document.getElementById("cur_credits").value;
+        var d = document.getElementById("GPA").value;
+        var x = ( (parseFloat(a)*parseFloat(b))
+                  + (parseFloat(c)*parseFloat(d)) )
+        var y = (parseFloat(a)+parseFloat(c));
+        var final_cgpa = x/y;
+        document.getElementById("demo").innerHTML = final_cgpa;
+    }
+</script>
+
+<h2>CGPA Calculator</h2>
+<label >Credits till last semester:</label>
+  <input type="number" id="tot_credits"><br>
+    <br>
+  <label >CGPA till last semester:</label>
+  <input type="number" id="CGPA"><br>
+    <br>
+  <label>Credits in this semester:</label>
+  <input type="number" id="cur_credits" ><br>
+    <br>
+  <label>GPA in this semester (SGPA):</label>
+  <input type="number" id="GPA"><br>
+
+  <br>
+  <div class="btn-group">
+    <button onclick = "calculate1()" class="button">Submit</button>
+  </div>
+
+  <p id="demo"></p>
+</body>
+</html>
